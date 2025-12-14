@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur QR Code - Nakile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Générateur QR Code</h1>
+            <p class="subtitle">Créez des QR codes personnalisés avec votre logo</p>
+        </header>
+
+        <div class="content">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="url-input">URL ou Texte</label>
+                    <input type="text" id="url-input" placeholder="https://nakile.fr" value="https://nakile.fr">
+                </div>
+
+                <div class="form-group">
+                    <label for="logo-input">Logo (optionnel)</label>
+                    <input type="file" id="logo-input" accept="image/*">
+                    <small>Formats : PNG, JPG, SVG (max 2MB)</small>
+                </div>
+
+                <div class="color-grid">
+                    <div class="form-group">
+                        <label for="dots-color">Couleur des points</label>
+                        <input type="color" id="dots-color" value="#5e5945">
+                    </div>
+                    <div class="form-group">
+                        <label for="bg-color">Couleur de fond</label>
+                        <input type="color" id="bg-color" value="#d4c5a0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dots-style">Style des points</label>
+                    <select id="dots-style">
+                        <option value="rounded">Arrondis</option>
+                        <option value="dots">Points</option>
+                        <option value="classy">Classique</option>
+                        <option value="square">Carrés</option>
+                        <option value="extra-rounded">Extra arrondis</option>
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="btn-primary">
+                    Générer le QR Code
+                </button>
+            </div>
+
+            <div class="preview-section">
+                <div id="qr-canvas"></div>
+                <button id="download-btn" class="btn-secondary" style="display: none;">
+                    📥 Télécharger (PNG)
+                </button>
+                <button id="download-svg-btn" class="btn-secondary" style="display: none;">
+                    📥 Télécharger (SVG)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
